@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>portfolio.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="city-pursuit">City Pursuit</h1>
+<p><img src="image/title.jpg" alt=""></p>
+<h3 id="%E4%BD%9C%E6%88%90%E8%80%85">作成者</h3>
+<blockquote>
+<p>河原電子ビジネス専門学校 ゲームクリエイター科<br>
+谷本優樹</p>
+</blockquote>
+<h2 id="%E7%9B%AE%E6%AC%A1">目次</h2>
+<blockquote>
+<ul>
+<li><a href="#1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</a></li>
+<li><a href="#2%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">2.操作方法</a></li>
+<li><a href="#3%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">3.担当ソースコード</a></li>
+<li><a href="#%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">技術紹介</a>
+<ul>
+<li><a href="#4%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">4.ワイヤーアクション</a></li>
+<li><a href="#5%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A2%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E6%99%82%E3%81%AE%E3%83%9D%E3%82%B9%E3%83%88%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88">5.ゲームクリア・オーバー時のポストエフェクト</a></li>
+<li><a href="#6%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%AE%E8%A6%96%E9%8C%90%E5%8F%B0%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E5%BD%93%E3%81%9F%E3%82%8A%E5%88%A4%E5%AE%9A">6.カメラの視錐台を用いた当たり判定</a></li>
+</ul>
+</li>
+<li><a href="#%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8">こだわったこと</a>
+<ul>
+<li><a href="#7%E7%88%BD%E5%BF%AB%E6%84%9F%E3%81%AE%E3%81%82%E3%82%8B%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%B7%A5%E5%A4%AB">7.爽快感のあるワイヤーアクションの工夫</a></li>
+<li><a href="#8%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E3%81%AE%E6%BC%94%E5%87%BA">8.ゲーム内の演出</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="1%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">1.作品概要</h2>
+<blockquote>
+<ul>
+<li>ゲームジャンル
+<ul>
+<li>ワイヤーアクションゲーム</li>
+</ul>
+</li>
+<li>ゲーム内容
+<ul>
+<li>制限時間内に都市内に逃走している車をワイヤーアクションを駆使してすべて捕獲するゲーム</li>
+</ul>
+</li>
+<li>プレイ人数
+<ul>
+<li>1人</li>
+</ul>
+</li>
+<li>対応コントローラー
+<ul>
+<li>Xbox 360 コントローラー</li>
+</ul>
+</li>
+<li>使用ツール
+<ul>
+<li>プログラム
+<ul>
+<li>Visual Studio 2022</li>
+</ul>
+</li>
+<li>3Dモデル
+<ul>
+<li>3ds Max 2025</li>
+</ul>
+</li>
+<li>画像
+<ul>
+<li>Adobe Photoshop 2024</li>
+</ul>
+</li>
+<li>エフェクト
+<ul>
+<li>Effeckseer</li>
+</ul>
+</li>
+<li>バージョン管理
+<ul>
+<li>GitHub</li>
+<li>Fork</li>
+</ul>
+</li>
+<li>タスク管理
+<ul>
+<li>Notion</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用言語
+<ul>
+<li>C++, HLSL</li>
+</ul>
+</li>
+<li>開発環境
+<ul>
+<li>Windows11</li>
+<li>学校内製の簡易ゲームエンジン(DirectX12)</li>
+</ul>
+</li>
+<li>開発期間
+<ul>
+<li>2025年9月~現在</li>
+</ul>
+</li>
+<li>制作人数
+<ul>
+<li>1人</li>
+</ul>
+</li>
+<li>リンク
+<ul>
+<li>GitHub https://github.com/TanimotoYuuki/CityPursuit</li>
+</ul>
+</li>
+</ul>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+<h2 id="2%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">2.操作方法</h2>
+<blockquote>
+<p>Aボタン: ジャンプ<br>
+Yボタン: (車の近くで) 車の上に乗る<br>
+Lスティック: 移動<br>
+R2ボタン(長押し): (地上で) ダッシュ、(空中で) ワイヤーアクション <br>
+<a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+<h2 id="3%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">3.担当ソースコード</h2>
+<details>
+<summary>
+ソースコード(.cpp .h)
+</summary>
+<blockquote>
+<h3 id="%E3%82%B2%E3%83%BC%E3%83%A0">ゲーム</h3>
+<ul>
+<li>Buildings
+<ul>
+<li>Buildings.h</li>
+</ul>
+</li>
+<li>DebugLog.cpp
+<ul>
+<li>DebugLog.h</li>
+</ul>
+</li>
+<li>Enemy.cpp
+<ul>
+<li>Enemy.h</li>
+</ul>
+</li>
+<li>EnemyAI.cpp
+<ul>
+<li>EnemyAI.h</li>
+</ul>
+</li>
+<li>EnemyEffect.cpp
+<ul>
+<li>EnemyEffect.h</li>
+</ul>
+</li>
+<li>FadeManager.cpp
+<ul>
+<li>FadeManager.h</li>
+</ul>
+</li>
+<li>FirstEnemyDirection.cpp
+<ul>
+<li>FirstEnemyDirection.h</li>
+</ul>
+</li>
+<li>Game.cpp
+<ul>
+<li>Game.h</li>
+</ul>
+</li>
+<li>GameBackGround.cpp
+<ul>
+<li>GameBackGround.h</li>
+</ul>
+</li>
+<li>GameClear.cpp
+<ul>
+<li>GameClear.h</li>
+</ul>
+</li>
+<li>GameClearCamera.cpp
+<ul>
+<li>GameClearCamera.h</li>
+</ul>
+</li>
+<li>GameClearSprite.cpp
+<ul>
+<li>GameClearSprite.h</li>
+</ul>
+</li>
+<li>GameEndSelect.cpp
+<ul>
+<li>GameEndSelect.h</li>
+</ul>
+</li>
+<li>GameMission.cpp
+<ul>
+<li>GameMission.h</li>
+</ul>
+</li>
+<li>GameOver.cpp
+<ul>
+<li>GameOver.h</li>
+</ul>
+</li>
+<li>GameOverSprite.cpp
+<ul>
+<li>GameOverSprite.h</li>
+</ul>
+</li>
+<li>GameResult.cpp
+<ul>
+<li>GameResult.h</li>
+</ul>
+</li>
+<li>GameStartSprite.cpp
+<ul>
+<li>GameStartSprite.h</li>
+</ul>
+</li>
+<li>GameTimeLimit.cpp
+<ul>
+<li>GameTimeLimit.h</li>
+</ul>
+</li>
+<li>Loading.cpp
+<ul>
+<li>Loading.h</li>
+</ul>
+</li>
+<li>main.cpp</li>
+<li>MiniMap.cpp
+<ul>
+<li>MiniMap.h</li>
+</ul>
+</li>
+<li>Player.cpp
+<ul>
+<li>Player.h</li>
+</ul>
+</li>
+<li>PlayerAnimation.cpp
+<ul>
+<li>PlayerAnimation.h</li>
+</ul>
+</li>
+<li>PlayerCamera.cpp
+<ul>
+<li>PlayerCamera.h</li>
+</ul>
+</li>
+<li>PlayerCatchEnemy.cpp
+<ul>
+<li>PlayerCatchEnemy.h</li>
+</ul>
+</li>
+<li>PlayerEffect.cpp
+<ul>
+<li>PlayerEffect.h</li>
+</ul>
+</li>
+<li>PlayerJump.cpp
+<ul>
+<li>PlayerJump.h</li>
+</ul>
+</li>
+<li>PlayerMove.cpp
+<ul>
+<li>PlayerMove.h</li>
+</ul>
+</li>
+<li>PlayerRotation.cpp
+<ul>
+<li>PlayerRotation.h</li>
+</ul>
+</li>
+<li>PlayerSwingAction.cpp
+<ul>
+<li>PlayerSwingAction.h</li>
+</ul>
+</li>
+<li>QteEvent.cpp
+<ul>
+<li>QteEvent.h</li>
+</ul>
+</li>
+<li>QteEventInput.cpp
+<ul>
+<li>QteEventInput.h</li>
+</ul>
+</li>
+<li>SceneManager.cpp
+<ul>
+<li>SceneManager.h</li>
+</ul>
+</li>
+<li>SpriteAnimation.cpp
+<ul>
+<li>SpriteAnimation.h</li>
+</ul>
+</li>
+<li>Street.cpp
+<ul>
+<li>Street.h</li>
+</ul>
+</li>
+<li>SwingActionManager.cpp
+<ul>
+<li>SwingActionManager.h</li>
+</ul>
+</li>
+<li>SwingModel.cpp
+<ul>
+<li>SwingModel.h</li>
+</ul>
+</li>
+<li>SwingTarget.cpp
+<ul>
+<li>SwingTarget.h</li>
+</ul>
+</li>
+<li>Title.cpp
+<ul>
+<li>Title.h</li>
+</ul>
+</li>
+<li>TitleBackGround.cpp
+<ul>
+<li>TitleBackGround.h</li>
+</ul>
+</li>
+<li>TitleCamera.cpp
+<ul>
+<li>TitleCamera.h</li>
+</ul>
+</li>
+<li>TitleSelect.cpp
+<ul>
+<li>TitleSelect.h</li>
+</ul>
+</li>
+<li>TitleSprite.cpp
+<ul>
+<li>TitleSprite.h</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<h3 id="%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3">エンジン</h3>
+<ul>
+<li>CameraCollisionSolver.cpp
+<ul>
+<li>CameraCollisionSolver.h</li>
+</ul>
+</li>
+<li>GameEndPostEffect.cpp
+<ul>
+<li>GameEndPostEffect.h</li>
+</ul>
+</li>
+<li>SpringCamera.cpp
+<ul>
+<li>SpringCamera.h</li>
+</ul>
+</li>
+<li>ViewFrustum.cpp
+<ul>
+<li>ViewFrustum.h</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</details>
+<details>
+<summary>
+ソースコード(.fx)
+</summary>
+<blockquote>
+<ul>
+<li>bloom.fx</li>
+<li>GameEndPostEffect.fx</li>
+</ul>
+</blockquote>
+</details>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+<h1 id="%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">技術紹介</h1>
+<h2 id="4%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3">4.ワイヤーアクション</h2>
+<blockquote>
+<p><img src="image/swing.gif" width="500"><br></p>
+<h3 id="1%E7%89%A9%E7%90%86%E6%B3%95%E5%89%87%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E6%8C%AF%E3%82%8A%E5%AD%90%E3%81%AE%E6%8C%99%E5%8B%95%E3%81%AE%E5%AE%9F%E8%A3%85">1.物理法則に基づく振り子の挙動の実装</h3>
+<p>このゲームの核でもあるワイヤーアクションの「重み」と「加速感」を表現するために、振り子の原理を応用した物理計算を実装しました。<br></p>
+<ul>
+<li>
+<p>振り子の原理の応用: 単調な移動ではなく、振り子の最下点で最大速度となり、上昇するにつれて減速する挙動を下記の数式を用いて再現しました。<br><br>
+数式:($v = \sqrt{2gl(\cos\theta - \cos\theta_{top})}$)<br><br>
+これにより、重力に引っ張られるリアルな加速感を生み出しています。<br></p>
+</li>
+<li>
+<p>動的な重力係数の調整: プレイヤーの初期速度や落下速度に応じて重力加速度(G)を動的に変化させることで、高所からの落下時にワイヤーを繋いだ際の「急激な重力加速度」や、初速が足りない場合の挙動を自然に見せる調整を行っています。</p>
+</li>
+</ul>
+<h3 id="2%E5%BF%AB%E9%81%A9%E3%81%AA%E3%83%97%E3%83%AC%E3%82%A4%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8B%E3%82%BF%E3%83%BC%E3%82%B2%E3%83%83%E3%83%88%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0">2.快適なプレイを実現するターゲット検索アルゴリズム</h3>
+<p>広大な都市で、プレイヤーが「狙った場所」にストレスなくワイヤーを掛けられるよう、独自のターゲット検索システムを構築しました。<br></p>
+<ul>
+<li>
+<p>AABB表面へのターゲット動的生成: ビルのAABBから、表面、後面、側面に対して一定間隔でターゲット座標を計算し、コンテナに保持させています。これにより、手動でポイントを配置することなく、建物のあらゆる壁面をワイヤー対象として認識させることを可能にしました。<br></p>
+</li>
+<li>
+<p>最適なターゲットの選出ロジック:プレイヤーの前方ベクトルとターゲットへの内積計算を用い、視界内かつ距離が近い最適なポイントを毎フレーム検索しています。さらに、プレイヤーの背後にあるターゲットを除外するフィルタリングを行うことで、意図しない場所への誤作動を防いでいます。<br></p>
+</li>
+</ul>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+<h2 id="5%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A2%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E6%99%82%E3%81%AE%E3%83%9D%E3%82%B9%E3%83%88%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88">5.ゲームクリア・オーバー時のポストエフェクト</h2>
+<blockquote>
+<p>・ゲームクリア時のポストエフェクト<br><img src="image/gameClear.jpg" width="500"></p>
+<p>・ゲームオーバー時のポストエフェクト<br><img src="image/gameOver.jpg" width="500">
+<br></p>
+<h3 id="1%E5%AE%9F%E8%A3%85%E7%9B%AE%E7%9A%84">1.実装目的</h3>
+<p>ゲームの終了条件(クリア・オーバー)に応じて画面の雰囲気をリアルタイムに変化させ、プレイヤーに直感的なフィードバックを与えるポストエフェクトを実装しました。</p>
+<ul>
+<li>
+<p>ゲームクリア時(ガウシアンブラー) :背景をぼかすことで情報の優先度を下げ、画面に表示されるUIに視線を誘導します。</p>
+</li>
+<li>
+<p>ゲームオーバー時(モノクロ化＋ガウシアンブラー) :ブラーによる視線誘導に加え、画面の色味を抜くことで「失敗」「停止」といったネガティブなフィードバックを視覚的に強調し、没入感を損なわずリトライへの動線を提示しています。</p>
+</li>
+</ul>
+<h3 id="2%E5%8A%B9%E7%8E%87%E7%9A%84%E3%81%AA%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3">2.効率的なレンダリングパイプライン</h3>
+<p>複数のポストエフェクトを効率よく管理するため、以下の設計を行いました。</p>
+<ul>
+<li>
+<p>定数バッファによる動的制御: C++側から drawingPostEffect フラグを定数バッファとして送信することで、シェーダーを切り替えることなく、if分岐によって「ブラーのみ」「ブラー＋モノクロ」の処理を動的に切り替えています。</p>
+</li>
+<li>
+<p>イージングによるシームレスな遷移: drawingRate（0.0～1.0）というパラメータを毎フレーム更新し、lerp 関数で元のシーン画像とエフェクト画像を線形補間しています。これにより、パッと画面が切り替わるのではなく、徐々に視界が変化する滑らかな演出を実現しました。</p>
+</li>
+<li>
+<p>多段階レンダリング: シーンのキャプチャ → ガウシアンブラー処理（GPU） → モノクロ合成 → 最終出力というパスを構築し、レンダリングターゲットを使い回すことでメモリ効率を意識しました。</p>
+</li>
+</ul>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+<h2 id="6%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%AE%E8%A6%96%E9%8C%90%E5%8F%B0%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E5%BD%93%E3%81%9F%E3%82%8A%E5%88%A4%E5%AE%9A">6.カメラの視錐台を用いた当たり判定</h2>
+<blockquote>
+<img src="image/firstEnemyDirection.gif" width="500">
+<h3 id="1%E5%AE%9F%E8%A3%85%E7%9B%AE%E7%9A%84">1.実装目的</h3>
+<p>ゲーム内演出において「プレイヤーが敵を初めて発見した瞬間」を正しく判定するために実装しました。単にプレイヤーとの距離だけで判定すると、背後の敵や壁の向こう側の敵にも反応しまうため「カメラの視界内に存在する」かつ「遮蔽物に隠れていないか」を厳密に判定する必要がありました。<br></p>
+<h3 id="2%E3%83%93%E3%83%A5%E3%83%BC%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E8%A1%8C%E5%88%97%E3%81%8B%E3%82%89%E8%A6%96%E9%8C%90%E5%8F%B0%E6%8A%BD%E5%87%BA">2.ビュープロジェクション行列から視錐台抽出</h3>
+<p>カメラの視界両駅を表す6枚の平面(近・遠・上下左右)を、カメラのビュープロジェクション行列から直接抽出して計算しています。<br></p>
+<ul>
+<li>行列から平面導入: ビュープロジェクション行列の各成分を合成することで、ワールド行列における6つの平面方程式（$Ax + By + Cz + D = 0$）を毎フレーム算出します。各平面は法線ベクトルを正規化し、正確な距離判定が行える状態に更新します。<br></li>
+</ul>
+<h3 id="3%E5%B9%B3%E9%9D%A2%E3%81%A8%E7%90%83%E3%81%AE%E4%BA%A4%E5%B7%AE%E5%88%A4%E5%AE%9A%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AB%E3%83%AA%E3%83%B3%E3%82%B0">3.平面と球の交差判定によるカリング</h3>
+<p>判定対象（敵キャラクター）に対してバウンディングスフィア（境界球）を設定し、視錐台の6枚の平面すべてに対して「内側にあるか」を判定します。</p>
+<ul>
+<li>点と平面の距離計算: 平面の法線ベクトルと座標の内積を用いて、球の中心が平面の「表」にあるか「裏」にあるかを判定します。計算式normal.Dot(center) + distance &lt; -radius を用いることで、球体が完全に平面の外側にある場合のみfalseを返すフィルタリングを実現しました。</li>
+</ul>
+<h3 id="4%E3%83%AC%E3%82%A4%E3%82%AD%E3%83%A3%E3%82%B9%E3%83%88%E3%82%92%E4%BD%B5%E7%94%A8%E3%81%97%E3%81%9F%E5%8E%B3%E5%AF%86%E3%81%AA%E9%81%AE%E8%94%BD%E5%88%A4%E5%AE%9A">4.レイキャストを併用した厳密な遮蔽判定</h3>
+<p>視錐台の判定のみだと、「壁の裏に敵」も「視界内」として判定してしまいます。そこで、視錐台の判定を通過したオブジェクトに対してのみ、物理エンジンによるレイキャストを実行する2段階構成にしました。</p>
+<ul>
+<li>処理負荷の最適化: 重い処理であるレイキャストの実行処理を視錐台カリングによって事前に軽減することで、パフォーマンスを維持しつつ、「壁越しには反応しない」という正確なゲームプレイ判定を実現しています。</li>
+</ul>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+<h1 id="%E3%81%93%E3%81%A0%E3%82%8F%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8">こだわったこと</h1>
+<h2 id="7%E7%88%BD%E5%BF%AB%E6%84%9F%E3%81%AE%E3%81%82%E3%82%8B%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%BC%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%B7%A5%E5%A4%AB">7.爽快感のあるワイヤーアクションの工夫</h2>
+<blockquote>
+<h3 id="1%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%AE%E6%B8%9B%E8%A1%B0%E5%87%A6%E7%90%86br">1.カメラの減衰処理<br></h3>
+<p>カメラに何も工夫せずに追従するとワイヤーアクションの加速感が感じられない挙動になるため、カメラに減衰を持たせて追従することで加速感を感じることができ、ワイヤーアクション特有の爽快感を実現することができました。</p>
+<h3 id="2%E7%94%BB%E9%9D%A2%E5%91%A8%E3%82%8A%E3%81%AB%E9%9B%86%E4%B8%AD%E7%B7%9A%E3%81%AE%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E6%8F%8F%E7%94%BBbr">2.画面周りに集中線のエフェクトの描画<br></h3>
+<p>ワイヤーアクション中に画面周りに集中線のエフェクトを描画することで加速感を視覚的に表現することができました。</p>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+<h2 id="8%E3%82%B2%E3%83%BC%E3%83%A0%E5%86%85%E3%81%AE%E6%BC%94%E5%87%BA">8.ゲーム内の演出</h2>
+<blockquote>
+<ul>
+<li>
+<h3 id="1%E5%88%9D%E3%82%81%E3%81%A6%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E6%95%B5%E3%82%92%E6%8D%95%E6%8D%89%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E6%BC%94%E5%87%BAbrimg-src%22imagefirstenemydirectiongif%22-width%22500%22">1.初めてプレイヤーが敵を捕捉したときの演出<br><img src="image/firstEnemyDirection.gif" width="500"></h3>
+<ul>
+<li>このゲームを初めてプレイする人は敵はどれなのか分からないため<br>
+画面内に初めて敵を捕捉したらカメラを敵の方にズームインして<br>
+UIを表示すれば敵だと認識することができます。</li>
+</ul>
+</li>
+<li>
+<h3 id="2qte%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E7%B5%90%E6%9E%9C%E3%81%AE%E6%BC%94%E5%87%BA%E3%82%B7%E3%83%BC%E3%83%B3">2.QTEイベント結果の演出シーン</h3>
+<ul>
+<li>
+<h4 id="%E6%88%90%E5%8A%9F%E3%82%B7%E3%83%BC%E3%83%B3brimg-src%22imageqtesuccessgif%22-width%22500%22">成功シーン<br><img src="image/qteSuccess.gif" width="500"></h4>
+<ul>
+<li>「逃走車が近くのビルに衝突させてから派手に爆発すること」で<br>
+逃走車を捕獲したという達成感を強調しています。<br></li>
+</ul>
+</li>
+<li>
+<h4 id="%E5%A4%B1%E6%95%97%E3%82%B7%E3%83%BC%E3%83%B3brimg-src%22imageqtefailedgif%22-width%22500%22">失敗シーン<br><img src="image/qteFailed.gif" width="500"></h4>
+<ul>
+<li>「車が急加速し、プレイヤーを振り落とす」の挙動を入れることで、QTEイベントに失敗した悔しさと逃走車が逃げられた状況を直感的に伝えています。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="3%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A2%E6%BC%94%E5%87%BAbrimg-src%22imagegamecleargif%22-width%22500%22">3.ゲームクリア演出<br><img src="image/gameClear.gif" width="500"></h3>
+<ul>
+<li>スコア表示をアニメーション化して、プレイヤーの達成感を最大化させています。</li>
+</ul>
+</li>
+<li>
+<h3 id="4%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E6%BC%94%E5%87%BAbrimg-src%22imagegameovergif%22-width%22500%22">4.ゲームオーバー演出<br><img src="image/gameOver.gif" width="500"></h3>
+<ul>
+<li>「画面全体をモノクロ化」するポストエフェクトをかけて、<br>
+視覚的に「失敗した」ことが瞬時に伝わるようにしました。<br>
+UIだけでなく、画面全体の色味で状況を伝える工夫をしています。</li>
+</ul>
+</li>
+</ul>
+<p><a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
+</blockquote>
+
+</body>
+</html>
