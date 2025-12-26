@@ -51,6 +51,7 @@
 >   * 1人
 > * リンク
 >   * GitHub <a href="https://github.com/TanimotoYuuki/CityPursuit_Portfolio" target="_blank"> https://github.com/TanimotoYuuki/CityPursuit_Portfolio </a>
+>   * Youtube <a href="https://youtu.be/cs3pjsDVaVo" target="_blank"> https://youtu.be/cs3pjsDVaVo </a>
 >
 > [目次へ戻る](#目次)
 
