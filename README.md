@@ -50,7 +50,7 @@
 > * 制作人数
 >   * 1人
 > * リンク
->   * GitHub <a href="https://github.com/TanimotoYuuki/CityPursuit" target="_blank"> https://github.com/TanimotoYuuki/CityPursuit </a>
+>   * GitHub <a href="https://github.com/TanimotoYuuki/CityPursuit_Portfolio" target="_blank"> https://github.com/TanimotoYuuki/CityPursuit_Portfolio </a>
 >
 > [目次へ戻る](#目次)
 
