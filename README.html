@@ -356,18 +356,12 @@ code {
 
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-</script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax:{inlineMath: [['$', '$']]},
+      messageStyle: "none"
+    });
 </script>
 <body>
   <script>
@@ -388,7 +382,7 @@ code {
 <p><img src="image/title.jpg" alt=""></p>
 <h3 id="%E4%BD%9C%E6%88%90%E8%80%85">作成者</h3>
 <blockquote>
-<p>河原電子ビジネス専門学校 ゲームクリエイター科<br>
+<p>河原電子ビジネス専門学校 ゲームクリエイター科<br><br>
 谷本優樹</p>
 </blockquote>
 <h2 id="%E7%9B%AE%E6%AC%A1">目次</h2>
@@ -502,10 +496,10 @@ code {
 </blockquote>
 <h2 id="2%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">2.操作方法</h2>
 <blockquote>
-<p>Aボタン: ジャンプ<br>
-Yボタン: (車の近くで) 車の上に乗る<br>
-Lスティック: 移動<br>
-R2ボタン(長押し): (地上で) ダッシュ、(空中で) ワイヤーアクション <br>
+<p>Aボタン: ジャンプ<br><br>
+Yボタン: (車の近くで) 車の上に乗る<br><br>
+Lスティック: 移動<br><br>
+R2ボタン(長押し): (地上で) ダッシュ、(空中で) ワイヤーアクション <br><br>
 <a href="#%E7%9B%AE%E6%AC%A1">目次へ戻る</a></p>
 </blockquote>
 <h2 id="3%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">3.担当ソースコード</h2>
@@ -780,8 +774,8 @@ R2ボタン(長押し): (地上で) ダッシュ、(空中で) ワイヤーア�
 <p>このゲームの核でもあるワイヤーアクションの「重み」と「加速感」を表現するために、振り子の原理を応用した物理計算を実装しました。<br></p>
 <ul>
 <li>
-<p>振り子の原理の応用: 単調な移動ではなく、振り子の最下点で最大速度となり、上昇するにつれて減速する挙動を下記の数式を用いて再現しました。<br><br>
-数式: $v = \sqrt{2gl(\cos\theta - \cos\theta_{top})}$ <br><br>
+<p>振り子の原理の応用: 単調な移動ではなく、振り子の最下点で最大速度となり、上昇するにつれて減速する挙動を下記の数式を用いて再現しました。<br><br><br>
+数式: $v = \sqrt{2gl(\cos\theta - \cos\theta_{top})}$ <br><br><br>
 これにより、重力に引っ張られるリアルな加速感を生み出しています。<br></p>
 </li>
 <li>
@@ -803,7 +797,7 @@ R2ボタン(長押し): (地上で) ダッシュ、(空中で) ワイヤーア�
 <h2 id="5%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AF%E3%83%AA%E3%82%A2%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E6%99%82%E3%81%AE%E3%83%9D%E3%82%B9%E3%83%88%E3%82%A8%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88">5.ゲームクリア・オーバー時のポストエフェクト</h2>
 <blockquote>
 <p>・ゲームクリア時のポストエフェクト<br><img src="image/gameClear.jpg" width="500"></p>
-<p>・ゲームオーバー時のポストエフェクト<br><img src="image/gameOver.jpg" width="500">
+<p>・ゲームオーバー時のポストエフェクト<br><img src="image/gameOver.jpg" width="500"><br>
 <br></p>
 <h3 id="1%E5%AE%9F%E8%A3%85%E7%9B%AE%E7%9A%84">1.実装目的</h3>
 <p>ゲームの終了条件(クリア・オーバー)に応じて画面の雰囲気をリアルタイムに変化させ、プレイヤーに直感的なフィードバックを与えるポストエフェクトを実装しました。</p>
@@ -867,8 +861,8 @@ R2ボタン(長押し): (地上で) ダッシュ、(空中で) ワイヤーア�
 <li>
 <h3 id="1%E5%88%9D%E3%82%81%E3%81%A6%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%81%8C%E6%95%B5%E3%82%92%E6%8D%95%E6%8D%89%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E6%BC%94%E5%87%BAbrimg-src%22imagefirstenemydirectiongif%22-width%22500%22">1.初めてプレイヤーが敵を捕捉したときの演出<br><img src="image/firstEnemyDirection.gif" width="500"></h3>
 <ul>
-<li>このゲームを初めてプレイする人は敵はどれなのか分からないため<br>
-画面内に初めて敵を捕捉したらカメラを敵の方にズームインして<br>
+<li>このゲームを初めてプレイする人は敵はどれなのか分からないため<br><br>
+画面内に初めて敵を捕捉したらカメラを敵の方にズームインして<br><br>
 UIを表示すれば敵だと認識することができます。</li>
 </ul>
 </li>
@@ -878,7 +872,7 @@ UIを表示すれば敵だと認識することができます。</li>
 <li>
 <h4 id="%E6%88%90%E5%8A%9F%E3%82%B7%E3%83%BC%E3%83%B3brimg-src%22imageqtesuccessgif%22-width%22500%22">成功シーン<br><img src="image/qteSuccess.gif" width="500"></h4>
 <ul>
-<li>「逃走車が近くのビルに衝突させてから派手に爆発すること」で<br>
+<li>「逃走車が近くのビルに衝突させてから派手に爆発すること」で<br><br>
 逃走車を捕獲したという達成感を強調しています。<br></li>
 </ul>
 </li>
@@ -899,8 +893,8 @@ UIを表示すれば敵だと認識することができます。</li>
 <li>
 <h3 id="4%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E6%BC%94%E5%87%BAbrimg-src%22imagegameovergif%22-width%22500%22">4.ゲームオーバー演出<br><img src="image/gameOver.gif" width="500"></h3>
 <ul>
-<li>「画面全体をモノクロ化」するポストエフェクトをかけて、<br>
-視覚的に「失敗した」ことが瞬時に伝わるようにしました。<br>
+<li>「画面全体をモノクロ化」するポストエフェクトをかけて、<br><br>
+視覚的に「失敗した」ことが瞬時に伝わるようにしました。<br><br>
 UIだけでなく、画面全体の色味で状況を伝える工夫をしています。</li>
 </ul>
 </li>
