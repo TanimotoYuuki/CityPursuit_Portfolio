@@ -356,6 +356,13 @@ code {
 
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax:{inlineMath: [['$', '$']]},
+      messageStyle: "none"
+    });
+</script>
 <body>
   <script>
     mermaid.initialize({
@@ -365,6 +372,12 @@ code {
           : 'default'
     });
   </script>
+    <style>  
+    hr {  
+      opacity: 0;  
+      break-after: page;  
+    }  
+  </style> 
 <h1 id="city-pursuit">City Pursuit</h1>
 <p><img src="image/title.jpg" alt=""></p>
 <h3 id="%E4%BD%9C%E6%88%90%E8%80%85">作成者</h3>
