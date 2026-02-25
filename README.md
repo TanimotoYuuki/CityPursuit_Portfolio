@@ -110,6 +110,8 @@
 >   * GameStartSprite.h
 > * GameTimeLimit.cpp
 >   * GameTimeLimit.h
+> * InvisibleWall.cpp
+>   * InvisibleWall.h
 > * Loading.cpp
 >   * Loading.h
 > * main.cpp
